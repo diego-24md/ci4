@@ -9,7 +9,12 @@ class Carrera extends BaseController{
    */
   public function showIngenieria(): string
   {
-    return view('ingenieria');
+    //Los métodos en los controladores pueden realizar operaciones complejas
+    //una de estas tareas es enviar datos al frontend (vista)
+    
+    $lista = array("Javascript", "Python", "Java", "PHP", "SQL");
+
+    return view('ingenieria', ["desarrollador" => "Jhon Francia Minaya", "lenguajes" => $lista]);
   }
 
   /**
@@ -17,7 +22,8 @@ class Carrera extends BaseController{
    */
   public function showDesign(): string
   {
-    return view('design');
+    $aplicaciones = ["Photoshop", "Premier", "Corel Draw", "Figma", "SoundBox"];
+    return view('design', ["aplicaciones" => $aplicaciones]);
   }
 
 }
